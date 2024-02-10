@@ -2,7 +2,7 @@ package components
 
 import database "todo/Database"
 
-type notes struct {
+type note struct {
 	Title string `json:"title"`
 	Desc  string `json:"desc"`
 	Date  string `json:"date"`
