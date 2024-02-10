@@ -8,4 +8,4 @@ type note struct {
 	Date  string `json:"date"`
 }
 
-var connectionClient = database.Db().Database("test").Collection("test")
+var connectionClient = database.Db().Database("goTest").Collection("users")

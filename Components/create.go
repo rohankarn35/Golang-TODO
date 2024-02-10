@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 func CreateNote(w http.ResponseWriter, r *http.Request) {
@@ -18,6 +20,10 @@ func CreateNote(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	json.NewEncoder(w).Encode(insertResult.InsertedID)
+	inserted := bson.M{}
+	filter := bson.D{{Key: "_id", Value: insertResult.InsertedID}}
+
+	connectionClient.FindOne(context.TODO(), filter).Decode(&inserted)
+	json.NewEncoder(w).Encode(inserted)
 
 }
