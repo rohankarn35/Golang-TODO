@@ -11,9 +11,9 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/createNote", components.CreateNote).Methods("POST")
-	// r.HandleFunc("/getNote", GetNote).Methods("POST")
+	r.HandleFunc("/getNote/{id}", components.GetNote).Methods("POST")
 	r.HandleFunc("/update", components.UpdateProfile).Methods("PUT")
-	// r.HandleFunc("/delete/{id}", DeleteNote).Methods("DELETE")
-	// r.HandleFunc("/getAll", GetAllNote).Methods("GET")
+	r.HandleFunc("/delete/{id}", components.DeleteNote).Methods("DELETE")
+	r.HandleFunc("/getAll", components.GetAllNote).Methods("GET")
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
