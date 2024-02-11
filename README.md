@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/rohankarn35/rdserver/blob/main/MYAPP/Screenshot%20from%202024-02-12%2000-25-46.png" alt="project-screenshot" width="10" height="10/">
+<img src="https://github.com/rohankarn35/rdserver/blob/main/MYAPP/Screenshot%20from%202024-02-12%2000-25-46.png" alt="project-screenshot" width="100" height="100/">
 
   
   
